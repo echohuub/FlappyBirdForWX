@@ -1,6 +1,7 @@
 // 下半部分的钢笔
 import {Pencil} from "./Pencil.js";
 import {Sprite} from "../base/Sprite.js";
+import {DataStore} from "../base/DataStore.js";
 
 export class DownPencil extends Pencil {
 
@@ -10,7 +11,7 @@ export class DownPencil extends Pencil {
     }
 
     draw() {
-        let gap = window.innerHeight / 5;
+        let gap = DataStore.getInstance().canvas.height / 5;
         this.y = this.top + gap;
         super.draw();
     }
